@@ -1,4 +1,4 @@
-# [package:media_kit](https://github.com/media-kit/media-kit)
+# [package:media_kit](https://github.com/media-kit/media-kit) (forked for Reactish)
 
 #### A cross-platform video player & audio player for Flutter & Dart.
 
