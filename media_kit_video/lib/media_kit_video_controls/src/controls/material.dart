@@ -821,6 +821,7 @@ class _MaterialVideoControlsState extends State<_MaterialVideoControls> {
                 onEnd: () {
                   setState(() {
                     if (!visible) {
+                      // TODO investigate mount
                       mount = false;
                     }
                   });
@@ -831,16 +832,17 @@ class _MaterialVideoControlsState extends State<_MaterialVideoControls> {
                   children: [
                     Positioned.fill(
                       child: Container(
-                        color: _theme(context).backdropColor,
+                        color: _theme(context).backdropColor, // TODO think about this
                       ),
                     ),
+                    // TODO think about this??????????????? boundary thing
                     // We are adding 16.0 boundary around the actual controls (which contain the vertical drag gesture detectors).
                     // This will make the hit-test on edges (e.g. swiping to: show status-bar, show navigation-bar, go back in navigation) not activate the swipe gesture annoyingly.
                     Positioned.fill(
                       left: 16.0,
                       top: 16.0,
                       right: 16.0,
-                      bottom: 16.0 + subtitleVerticalShiftOffset,
+                      bottom: 16.0,
                       child: Listener(
                         onPointerDown: (event) => _handlePointerDown(event),
                         child: GestureDetector(
